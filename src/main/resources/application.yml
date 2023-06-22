@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+## Database - connect mysql
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/kyn_api
+    username: root
+    password:
+  security:
+    oauth2:
+      client:
+        registration:
+        
+
+## JPA-Hibernate
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        show_sql: true
+
+    hibernate:
+      ddl-auto: update
+    
+## JWT - Config
+jwt:
+  secret: fD8b5z!^v9*mGnC%W0@k+3Xj6$yR7qAe
+  expiration: 3600000
+  
+facebook:
+  clientId: 6167411863372212
+  clientSecret: 69fba142f3464b0e028e203bb6a8b836
+  redirect-uri: http://localhost:8080/auth/facebook/callback
+  scope:
+        - email
+        - public_profile
